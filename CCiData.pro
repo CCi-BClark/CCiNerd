@@ -16,13 +16,19 @@ QT       += core gui
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    tabwidget.cpp
+    tabwidget.cpp \
+    targetwidget.cpp \
+    selectfield.cpp
 
 HEADERS  += mainwindow.h \
-    tabwidget.h
+    tabwidget.h \
+    targetwidget.h \
+    selectfield.h
 
 FORMS    += mainwindow.ui \
-    tabwidget.ui
+    tabwidget.ui \
+    targetwidget.ui \
+    selectfield.ui
 
 RESOURCES += \
     rc.qrc

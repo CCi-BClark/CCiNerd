@@ -4,10 +4,7 @@
 #include <QMainWindow>
 #include <QFileInfo>
 #include "tabwidget.h"
-#include "xlsxdocument.h"
-#include "xlsxcell.h"
-#include "xlsxformat.h"
-#include "xlsxdatavalidation.h"
+#include "targetwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,14 +27,15 @@ protected slots:
     void closeAll();
 
 private slots:
-    void btnData();                             // Call data window.
-    void btnOpen();                             // Open xlsx file.
+    void btnData();                             // Call tabWidget.
+    void btnTargets();                          // Call targetWidget.
+    void btnOpen();                         // Select xlsx file data.
 
 private:
     Ui::MainWindow *ui;
     QFileInfo fileName;
-    TabWidget *tabWidget;                       // Create data window object.
-    QXlsx::Document *file;
+    TabWidget *tabWidget;                       // Create data view.
+    TargetWidget *targetWidget;                 // Create add tagets view.
 };
 
 #endif // MAINWINDOW_H

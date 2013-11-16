@@ -24,6 +24,7 @@ public:
 protected:
     void setColCount(int);
     void setRowCount(int);
+    void setCurrentRecord(int);
 
 private slots:
 

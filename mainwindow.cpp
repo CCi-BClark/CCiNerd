@@ -8,12 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
     tabWidget = new TabWidget;
+    targetWidget = new TargetWidget;
     setFileLabel("No File Selected");
 
     // Create signal/slot to call data window.
     connect(ui->buttonStart,SIGNAL(clicked()),this,SLOT(btnData()));
     connect(ui->menuExit,SIGNAL(triggered()),this,SLOT(closeAll()));
     connect(ui->buttonSelectFile,SIGNAL(clicked()),this,SLOT(btnOpen()));
+    connect(ui->buttonSelectTarget,SIGNAL(clicked()),this,SLOT(btnTargets()));
 }
 
 void MainWindow::btnData() {
@@ -37,6 +39,10 @@ void MainWindow::enableDataView(bool status) {
 void MainWindow::enableTargetSelect(bool status){
     ui->buttonSelectTarget->setEnabled(status);
     ui->menuSelectTarget->setEnabled(status);
+}
+
+void MainWindow::btnTargets() {
+    targetWidget->show();
 }
 
 void MainWindow::btnOpen() {

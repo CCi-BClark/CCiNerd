@@ -32,7 +32,7 @@
    <string>Target Data</string>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>1</number>
   </property>
   <widget class="QWidget" name="tabCurrent">
    <attribute name="title">
@@ -43,7 +43,7 @@
      <rect>
       <x>140</x>
       <y>10</y>
-      <width>81</width>
+      <width>71</width>
       <height>16</height>
      </rect>
     </property>
@@ -171,6 +171,32 @@
      <string>Next</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labelRecord">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelRecordTotal">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>currentGroup</zorder>
    <zorder>labelTotal</zorder>
    <zorder>labelCurrent</zorder>
@@ -178,21 +204,13 @@
    <zorder>buttonClose</zorder>
    <zorder>buttonPrev</zorder>
    <zorder>buttonNext</zorder>
+   <zorder>labelRecord</zorder>
+   <zorder>labelRecordTotal</zorder>
   </widget>
   <widget class="QWidget" name="tabAll">
    <attribute name="title">
     <string>All Data</string>
    </attribute>
-   <widget class="QListView" name="listData">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>281</width>
-      <height>231</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="buttonClose_2">
     <property name="geometry">
      <rect>
@@ -204,6 +222,16 @@
     </property>
     <property name="text">
      <string>Close</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>281</width>
+      <height>231</height>
+     </rect>
     </property>
    </widget>
   </widget>
