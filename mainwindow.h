@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileInfo>
-#include "tabwidget.h"
+#include "datawidget.h"
 #include "targetwidget.h"
 
 namespace Ui {
@@ -34,7 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QFileInfo fileName;
-    TabWidget *tabWidget;                       // Create data view.
+    DataWidget *tabWidget;                       // Create data view.
     TargetWidget *targetWidget;                 // Create add tagets view.
 };
 

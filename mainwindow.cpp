@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    tabWidget = new TabWidget;
+    tabWidget = new DataWidget;
     targetWidget = new TargetWidget;
     setFileLabel("No File Selected");
 
@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->menuExit,SIGNAL(triggered()),this,SLOT(closeAll()));
     connect(ui->buttonSelectFile,SIGNAL(clicked()),this,SLOT(btnOpen()));
     connect(ui->buttonSelectTarget,SIGNAL(clicked()),this,SLOT(btnTargets()));
+    //connect(targetWidget->ui,SIGNAL(),this,SLOT(btnTargets()));
 }
 
 void MainWindow::btnData() {
@@ -43,6 +44,7 @@ void MainWindow::enableTargetSelect(bool status){
 
 void MainWindow::btnTargets() {
     targetWidget->show();
+    targetWidget->targets->setTargetFieldList(fileName.absoluteFilePath());
 }
 
 void MainWindow::btnOpen() {
@@ -52,24 +54,11 @@ void MainWindow::btnOpen() {
     setFileLabel(fileName.fileName());
     enableTargetSelect(true);
     enableDataView(true); //TODO Dont make active till targets are selected.  Waiting for data processing to finish.
-
-    /* Do not need here currently.(Leave in case)
-    file = new QXlsx::Document(fileName.absoluteFilePath());
-
-    qDebug() << "Test Colum A";
-    qDebug() << file->cellAt("A1")->value().toString();
-    qDebug() << file->cellAt("A2")->value().toString();
-    qDebug() << file->cellAt("A3")->value().toString();
-    qDebug() << file->cellAt("A4")->value().toString();
-    qDebug() << "Test Colum B";
-    qDebug() << file->cellAt("B1")->value().toString();
-    qDebug() << file->cellAt("B2")->value().toString();
-    qDebug() << file->cellAt("B3")->value().toString();
-    qDebug() << file->cellAt("B4")->value().toString();
-    */
 }
 
 MainWindow::~MainWindow() {
+    delete tabWidget;
+    delete targetWidget;
     delete ui;
 }
 

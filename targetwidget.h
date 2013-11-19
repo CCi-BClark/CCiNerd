@@ -15,6 +15,11 @@ class TargetWidget : public QWidget
 public:
     explicit TargetWidget(QWidget *parent = 0);
     ~TargetWidget();
+    SelectField *targets;
+
+protected:
+    void pushItem(QString data);
+    void pullItem(void);
 
 private slots:
     void btnAdd();
@@ -22,7 +27,6 @@ private slots:
 
 private:
     Ui::TargetWidget *ui;
-    SelectField *targets;
 };
 
 #endif // TARGETWIDGET_H
